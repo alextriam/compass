@@ -72,7 +72,7 @@ module Compass
         
         # Does this sprite need to be generated
         def generation_required?
-          !File.exists?(filename) || outdated? || options[:force]
+          !File.exist?(filename) || outdated? || options[:force]
         end
 
         # Returns the uniqueness hash for this sprite object
@@ -109,7 +109,7 @@ module Compass
 
         # Checks whether this sprite is outdated
         def outdated?
-          if File.exists?(filename)
+          if File.exist?(filename)
             return @images.any? {|image| image.mtime.to_i > self.mtime.to_i }
           end
           true

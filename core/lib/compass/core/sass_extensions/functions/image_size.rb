@@ -55,7 +55,7 @@ private
   end
   
   def image_path_for_size(image_file)
-    if File.exists?(image_file)
+    if File.exist?(image_file)
       return image_file 
     end
     real_path(image_file)

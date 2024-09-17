@@ -117,7 +117,7 @@ class LayoutTest < Test::Unit::TestCase
     assert_equal 400, base.width
     assert_equal 60, base.height
     assert_equal [[0, 0], [20, 120], [20, 0], [20, 100], [20, 160]], base.images.map {|i| [i.top, i.left]}
-    assert File.exists?(base.filename)
+    assert File.exist?(base.filename)
     FileUtils.rm base.filename
   end
 
@@ -130,7 +130,7 @@ class LayoutTest < Test::Unit::TestCase
     assert_equal 40, base.width
     assert_equal 40, base.height
     assert_equal [[30, 0], [20, 10], [10, 20], [0, 30]], base.images.map {|i| [i.top, i.left]}
-    assert File.exists?(base.filename)
+    assert File.exist?(base.filename)
     FileUtils.rm base.filename
   end
 
@@ -173,7 +173,7 @@ class LayoutTest < Test::Unit::TestCase
   it "should generate a horrizontal sprite" do
     base = horizontal
     base.generate
-    assert File.exists?(base.filename)
+    assert File.exist?(base.filename)
     FileUtils.rm base.filename
   end
     

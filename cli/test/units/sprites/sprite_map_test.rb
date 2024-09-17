@@ -78,7 +78,7 @@ class SpriteMapTest < Test::Unit::TestCase
 
   it "should generate sprite" do
     @base.generate
-    assert File.exists?(@base.filename)
+    assert File.exist?(@base.filename)
     assert !@base.generation_required?
     assert !@base.outdated?
   end
@@ -86,13 +86,13 @@ class SpriteMapTest < Test::Unit::TestCase
   it "should remove old sprite when generating new" do
     @base.generate
     file = @base.filename
-    assert File.exists?(file), "Original file does not exist"
+    assert File.exist?(file), "Original file does not exist"
     file_to_remove = File.join(@images_tmp_path, 'selectors', 'ten-by-ten.png')
     FileUtils.rm file_to_remove
-    assert !File.exists?(file_to_remove), "Failed to remove sprite file"
+    assert !File.exist?(file_to_remove), "Failed to remove sprite file"
     @base = sprite_map_test(@options)
     @base.generate
-    assert !File.exists?(file), "Sprite file did not get removed"
+    assert !File.exist?(file), "Sprite file did not get removed"
   end
   
   test "should get correct relative_name" do

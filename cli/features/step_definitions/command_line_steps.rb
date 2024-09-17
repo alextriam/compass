@@ -114,11 +114,11 @@ Then /^a directory ([^ ]+) is (not )?created$/ do |directory, negated|
 end
  
 Then /an? \w+ file ([^ ]+) is (not )?removed/ do |filename, negated|
-  File.exists?(filename).should == !!negated
+  File.exist?(filename).should == !!negated
 end
 
 Then /an? \w+ file ([^ ]+) is (not )?created/ do |filename, negated|
-  File.exists?(filename).should == !negated
+  File.exist?(filename).should == !negated
 end
 
 Then "the following files are reported removed:" do |table|
